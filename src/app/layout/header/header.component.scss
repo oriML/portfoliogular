@@ -1,6 +1,6 @@
 $soft-white: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
-$link-active-color: #00bcd4;
+$link-active-color: #00a5bb;
 $link-active-border-width: 2px;
 $link-hover-transition-duration: 1.5s;
 $link-active-transition-duration: 0.5s;
@@ -9,22 +9,27 @@ $link-inactive-transition-duration: 1.2s;
 .navbar {
     background-color: $soft-white;
     box-shadow: 0 2px 4px $shadow-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
     &-brand {
         margin-right: auto;
     }
 
     &-nav {
-        justify-content: center;
-        margin: auto;
+        width: 100%;
         border: none;
+        justify-content: center;
 
         & a {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
-            color: #000;
+            min-height: 8vh;
+            // margin-right: 10px;
+            color: #87a8be;
             font-weight: 600;
             text-decoration: none;
             outline: none;
