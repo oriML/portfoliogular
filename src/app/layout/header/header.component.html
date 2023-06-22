@@ -1,14 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="">Ori M Levi</a>
+        <a class="navbar-brand" [routerLink]="">Ori M Levi logo</a>
         <div class="collapse navbar-collapse tab" id="navbarNavAltMarkup">
             <div class="navbar-nav nav nav-tabs">
-                <a *ngFor="let link of menuLinks" class="nav-link" [routerLinkActive]="'active'"
-                    [routerLink]="link.route">
+                <a *ngFor="let link of menuLinks" [routerLinkActive]="'active'" [routerLink]="link.route">
                     <i [ngClass]="link.icon"></i>
                     {{link.label}}
                 </a>
             </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="linkedin-icon">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="mailto:example@gmail.com" class="gmail-icon">
+                <i class='bx bxs-envelope'></i>
+            </a>
+            <a href="https://wa.me/phone_number" target="_blank" rel="noopener" class="whatsapp-icon">
+                <i class='bx bxl-whatsapp'></i>
+            </a>
         </div>
     </div>
 </nav>

@@ -1,106 +1,112 @@
-a:hover,
-a:focus {
-    text-decoration: none;
-    outline: none;
-}
+$soft-white: #f9f9f9;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$link-active-color: #00bcd4;
+$link-active-border-width: 2px;
+$link-hover-transition-duration: 1.5s;
+$link-active-transition-duration: 0.5s;
+$link-inactive-transition-duration: 1.2s;
 
-.tab {
-    .nav-tabs {
-        background-color: transparent;
+.navbar {
+    background-color: $soft-white;
+    box-shadow: 0 2px 4px $shadow-color;
+
+    &-brand {
+        margin-right: auto;
+    }
+
+    &-nav {
+        justify-content: center;
+        margin: auto;
         border: none;
 
-        a {
-            color: #222;
-            background: transparent;
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 13px 15px 7px;
-            margin: 0 0 1px 0;
-            border: none;
-            border-radius: 0;
-            overflow: hidden;
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            outline: none;
             position: relative;
-            z-index: 1;
-            transition: all 0.3s ease 0s;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: color $link-inactive-transition-duration, background-color $link-hover-transition-duration; // Added background-color transition
 
-            &:last-child {
-                a {
-                    margin-right: 0;
-                }
+            & i {
+                margin-right: 5px;
             }
 
-            &:hover,
-            &.active {
-                color: #222;
-                background: transparent;
-                border: none;
+            &:hover:before,
+            &:hover:after,
+            &.active:before,
+            &.active:after {
+                width: 100%;
             }
 
-            &.active {
-                color: #fff;
+            &:hover:before,
+            &.active:before {
+                left: 0;
+                transform-origin: left;
+            }
+
+            &:hover:after,
+            &.active:after {
+                left: 0;
+                transform-origin: left;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: $link-active-border-width;
+                background-color: $link-active-color;
+                transform: scaleX(0);
+                transition: transform $link-active-transition-duration;
             }
 
             &:before {
-                content: "";
-                background: #444;
-                height: 100%;
-                width: 100%;
-                transform: perspective(400px) rotateX(75deg);
-                transform-origin: bottom center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                transition: all 0.5s ease 0s;
+                transition-delay: $link-active-transition-duration;
             }
 
-            &.active:before,
-            &:hover:before {
-                background: linear-gradient(#57f8c8, #58caff);
-                border-radius: 20px 20px 0 0;
-                transform: perspective(500px) rotateX(0);
+            &:after {
+                transition-delay: 0s;
+            }
+
+            &:hover {
+                color: $link-active-color;
+                transition: color .5s, background-color .5s;
+            }
+
+            &.active {
+                position: relative;
+                overflow: hidden;
+                color: $link-active-color;
+                transition: color $link-inactive-transition-duration, background-color $link-hover-transition-duration;
+
+                &:before,
+                &:after {
+                    transform: scaleX(1);
+                }
             }
         }
     }
 
-    .tab-content {
-        color: #fff;
-        background: #333;
-        font-size: 16px;
-        letter-spacing: 1px;
-        line-height: 23px;
-        padding: 20px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+    .social-icons {
+        display: flex;
+        align-items: center;
 
-        h3 {
-            color: #fff;
-            // font-size: 24px;
-            // font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 0 7px 0;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        .nav-tabs {
-            background-color: #333;
-            border-radius: 21px 21px 0 0;
-
-            a {
-                width: 100%;
-                color: #fff;
-            }
-        }
-
-        .tab-content {
-            h3 {
-                font-size: 18px;
-            }
+        & .linkedin-icon,
+        & .gmail-icon,
+        & .whatsapp-icon {
+            margin-left: 10px;
+            color: #000;
         }
     }
 }
