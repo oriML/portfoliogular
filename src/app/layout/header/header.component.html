@@ -5,6 +5,7 @@
             <div class="navbar-nav nav nav-tabs">
                 <a *ngFor="let link of menuLinks" class="nav-link" [routerLinkActive]="'active'"
                     [routerLink]="link.route">
+                    <i [ngClass]="link.icon"></i>
                     {{link.label}}
                 </a>
             </div>

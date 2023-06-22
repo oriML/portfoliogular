@@ -3,6 +3,12 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(to bottom right, #00bcd4, #007bff, #002d80);
+
+    // background: url('./utils/bg-img.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
 
     :first-child {
         margin-bottom: auto;
