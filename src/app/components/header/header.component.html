@@ -1,1 +1,13 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="">Ori M Levi</a>
+        <div class="collapse navbar-collapse tab" id="navbarNavAltMarkup">
+            <div class="navbar-nav nav nav-tabs">
+                <a *ngFor="let link of menuLinks" class="nav-link" [routerLinkActive]="'active'"
+                    [routerLink]="link.route">
+                    {{link.label}}
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
