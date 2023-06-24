@@ -9,13 +9,13 @@ $link-inactive-transition-duration: 1.2s;
 .navbar {
     background-color: $soft-white;
     box-shadow: 0 2px 4px $shadow-color;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+
+    &-collapse {
+        width: 70%;
+    }
 
     &-brand {
-        margin-right: auto;
+        width: 15%;
     }
 
     &-nav {
@@ -106,6 +106,8 @@ $link-inactive-transition-duration: 1.2s;
     .social-icons {
         display: flex;
         align-items: center;
+        justify-content: center;
+        width: 15%;
 
         & .linkedin-icon,
         & .gmail-icon,
