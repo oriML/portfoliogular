@@ -1,14 +1,14 @@
 $soft-white: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
-$link-active-color: #00a5bb;
+$link-active-color: #00e1ff;
 $link-active-border-width: 2px;
 $link-hover-transition-duration: 1.5s;
 $link-active-transition-duration: 0.5s;
 $link-inactive-transition-duration: 1.2s;
 
 .navbar {
-    background-color: $soft-white;
-    box-shadow: 0 2px 4px $shadow-color;
+    background-color: transparent;
+    // box-shadow: 0 2px 4px $shadow-color;
 
     &-collapse {
         width: 70%;
