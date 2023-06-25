@@ -5,6 +5,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { TechCarouselComponent } from './components/tech-carousel/tech-carousel.component';
 import { CarouselModule } from 'primeng/carousel';
 
+
 @NgModule({
   declarations: [
     AboutMeComponent,

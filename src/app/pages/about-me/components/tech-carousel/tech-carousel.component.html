@@ -1,5 +1,5 @@
-<p-carousel [value]="technologies" ngClass="hidePaginator" [circular]="true" [numVisible]="5" [numScroll]="1"
-    [autoplayInterval]="2000">
+<p-carousel #caruselDiv data-aos="zoom-in-right" [value]="technologies" ngClass="hidePaginator" [circular]="true"
+    [numVisible]="5" [numScroll]="1" [autoplayInterval]="2000">
     <ng-template let-tech pTemplate="item">
         <div class="tech-logo">
             <img [src]="'assets/img/logos/' + tech +'.svg'" [alt]="tech" />
