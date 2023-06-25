@@ -1,13 +1,8 @@
-<!-- <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
-    [showNavigationIndicators]="showNavigationIndicators">
-    <ng-template ngbSlide *ngFor="let tech of techArray">
-        <i class="fs-1" *ngFor="let t of tech.technologies" [ngClass]="t"></i>
-    </ng-template>
-</ngb-carousel> -->
-
-<p-carousel [value]="frontendTechnologies" ngClass="hidePaginator" [numVisible]="3" [numScroll]="1"
-    [autoplayInterval]="1500">
+<p-carousel [value]="technologies" ngClass="hidePaginator" [circular]="true" [numVisible]="5" [numScroll]="1"
+    [autoplayInterval]="2000">
     <ng-template let-tech pTemplate="item">
-        <i class="fs-1" [ngClass]="tech"></i>
+        <div class="tech-logo">
+            <img [src]="'assets/img/logos/' + tech +'.svg'" [alt]="tech" />
+        </div>
     </ng-template>
 </p-carousel>
