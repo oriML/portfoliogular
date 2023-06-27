@@ -1,0 +1,32 @@
+<div class="contact-form" data-aos="flip-left">
+    <h2>Contact Me!</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" (input)="applyEffect('name')" />
+            <div class="effect" [ngClass]="{ active: activeEffect === 'name' }"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" (input)="applyEffect('email')" />
+            <div class="effect" [ngClass]="{ active: activeEffect === 'email' }"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" formControlName="message" (input)="applyEffect('message')"></textarea>
+            <div class="effect" [ngClass]="{ active: activeEffect === 'message' }"></div>
+        </div>
+
+        <button *ngIf="!isSubmitting" type="submit" [disabled]="contactForm.invalid || isSubmitting">
+            <span>Submit</span>
+        </button>
+
+        <div class="text-center" *ngIf="isSubmitting">
+            <p-progressSpinner styleClass="w-[1px] h-[1px]" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+        </div>
+
+        <div class="success-indicator" *ngIf="isSubmitted">Form submitted successfully!</div>
+    </form>
+</div>

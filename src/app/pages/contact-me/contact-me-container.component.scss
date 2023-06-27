@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    justify-content: center;
+    
+    .contact- {
+        width: 40vw;
+        background-image: url('/assets/img/send-message.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

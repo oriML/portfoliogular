@@ -1,0 +1,92 @@
+$main-color: #00e1ff;
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    color: $main-color;
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        .form-group {
+            position: relative;
+
+            label {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                transition: border-color 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: $main-color;
+                }
+            }
+
+            .effect {
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $main-color;
+                transition: width 0.3s ease;
+
+                &.active {
+                    width: 100%;
+                }
+            }
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            background-color: #474747;
+            color: $main-color ;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            &:hover {
+                background-color: $main-color ;
+                color: #474747;
+            }
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .success-indicator {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: bold;
+        color: $main-color;
+    }
+}
+
+@keyframes loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
