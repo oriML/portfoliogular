@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutMeComponent } from 'src/app/pages/about-me/about-me-container.component';
 import { ContactMeContainerComponent } from 'src/app/pages/contact-me/contact-me-container.component';
 import { ExperienceContainerComponent } from 'src/app/pages/experience/experience-container.component';
-import { FormalEducationComponent } from 'src/app/pages/formal-education/formal-education.component';
+import { FormalEducationContainerComponent } from 'src/app/pages/formal-education/formal-education-container.component';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'formal-education',
-    component: FormalEducationComponent
+    component: FormalEducationContainerComponent
   },
   {
     path: 'experience',

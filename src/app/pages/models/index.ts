@@ -11,3 +11,16 @@ export interface ITimeLineModel {
     color: string;
     dir: string;
 }
+
+export interface IEducationModel {
+    school: string;
+    degree: string;
+    content: string;
+    date: string;
+    stack: string;
+    logo?: {
+        src: string;
+        alt: string;
+    },
+    color: string;
+}

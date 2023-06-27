@@ -1,0 +1,66 @@
+:host{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    white-space: break-spaces;
+
+    .icons{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2%;
+        gap: 8%;
+        .img-wrapper {
+            margin: auto;
+            img{
+                height: 100%;
+                width: 230px;
+            }
+        }
+        >div{
+            height: 230px;
+            min-height: 230px;
+            max-height: 230px;
+        }
+    }
+    
+    .cards{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2%;
+        gap: 8%;
+    >div {
+            min-height: 230px;
+            max-height: 230px;
+        }
+    }
+    
+    @media screen and (max-width: 610px) {
+        .icons{
+            align-items: flex-end;
+            .img-wrapper {
+                margin: auto;
+                img{
+                    // height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+       
+    }
+}
+
+::ng-deep{
+.p-card.p-component{
+    height: 100%;
+    box-shadow:   0 2px 11px -1px #00e1ff, 0 1px 1px 0 #00e1ff, 0 1px 3px 0 #00e1ff; 
+}
+.icons{
+.p-card.p-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
+}

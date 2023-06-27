@@ -1,0 +1,17 @@
+<section class="icons">
+    <div *ngFor="let icon of listIcons" data-aos="fade-right" data-aos-delay="200">
+        <p-card>
+            <div class="img-wrapper">
+                <img [src]="icon.src" [alt]="icon.alt" width="200" class="shadow-2 mb-4" />
+            </div>
+        </p-card>
+    </div>
+</section>
+
+<section class="cards">
+        <div *ngFor="let card of timeLines" data-aos="fade-left" data-aos-delay="200">
+            <p-card class="mt-4" [header]="card.school" [subheader]="card.date + ' ' + card.degree">
+                <p>{{card.content}}</p>                
+            </p-card>
+    </div>
+</section>
