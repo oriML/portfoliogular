@@ -1,0 +1,21 @@
+<p-timeline [value]="timeLines" align="alternate">
+    <ng-template pTemplate="marker" let-timeline>
+        <span class="custom-marker shadow-2" [style.backgroundColor]="timeline.color">
+            <i class="bx bx-buildings"></i>
+        </span>
+    </ng-template>
+    <ng-template pTemplate="content" let-timeline>
+        <div *ngIf="timeline.dir === 'ltr'" data-aos="flip-right" data-aos-duration="700">
+            <p-card [header]="timeline.company" [subheader]="timeline.date + ' ' + timeline.role">
+                <img *ngIf="timeline.logo?.src" [src]="timeline.logo.src" [alt]="timeline.logo.alt" width="200" class="shadow-2 mb-4" />
+                <p>{{timeline.content}}</p>                
+            </p-card>
+        </div>
+            <div *ngIf="timeline.dir === 'rtl'" data-aos="flip-left"  data-aos-delay="300" data-aos-duration="700"  >
+            <p-card [header]="timeline.company" [subheader]="timeline.date + ' ' + timeline.role">
+                <img *ngIf="timeline.logo?.src" [src]="timeline.logo.src" [alt]="timeline.logo.alt" width="200" class="shadow-2 mb-4" />
+                <p class="text-left">{{timeline.content}}</p>
+            </p-card>
+        </div>
+    </ng-template>
+</p-timeline>

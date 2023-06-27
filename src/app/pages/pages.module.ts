@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutMeModule } from './about-me/about-me.module';
 import { FormalEducationComponent } from './formal-education/formal-education.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
+import { ContactMeModule } from './contact-me/contact-me.module';
+import { ExperienceModule } from './experience/experience.module';
 
 @NgModule({
   declarations: [
-    FormalEducationComponent,
-    ExperienceComponent,
-    ContactMeComponent
+    FormalEducationComponent
   ],
   imports: [
     CommonModule,
-    AboutMeModule
+    AboutMeModule,
+    ContactMeModule,
+    ExperienceModule
   ]
 })
 export class PagesModule { }
