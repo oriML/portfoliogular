@@ -1,6 +1,6 @@
-<div class="contact-form" data-aos="fade-up-right">
+<div class="contact-form" data-aos="fade-up-left" data-aos-duration="1000">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="grouped" data-aos="fade-right" data-aos-delay="200">
+        <div class="grouped" data-aos="fade-left" data-aos-delay="200">
             <div class="form-group">
                 <label for="firstName">First name</label>
                 <span *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
@@ -23,7 +23,7 @@
 
         </div>
 
-        <div class="form-group" data-aos="fade-right" data-aos-delay="400">
+        <div class="form-group" data-aos="fade-left" data-aos-delay="400">
             <label for="email">Email</label>
             <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
                 class="error-message">Please enter a valid email address.
@@ -34,7 +34,7 @@
             </span>
         </div>
 
-        <div class="form-group" data-aos="fade-right" data-aos-delay="600">
+        <div class="form-group" data-aos="fade-left" data-aos-delay="600">
             <label for="mobile">Mobile</label>
             <span *ngIf="contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched"
                 class="error-message">Please enter a valid mobile number.</span>

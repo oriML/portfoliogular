@@ -6,9 +6,18 @@
   gap: 60px;
   border: 0;
   padding-left: 15%;
+  position: relative;
+
+  img{
+    position: absolute;
+    right: 0;
+    top: -65%;
+  }
+
   .connection-details {
     display: flex;
     align-items: center;
+    z-index: 100;
     gap: 2%;
     .details{
       max-width: 350px;

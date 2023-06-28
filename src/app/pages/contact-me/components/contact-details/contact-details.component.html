@@ -1,9 +1,12 @@
 <div class="details-card">
+
+  <img data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" src="assets/img/contact-me-img.png" alt="contact me img" />
+
   <div class="connection-details" *ngFor="let item of details">
-    <div class="icon-wrapper">
+    <div class="icon-wrapper" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
       <i [ngClass]="'bx bx-md ' + item.icon" ></i>
     </div>
-    <div class="details">
+    <div class="details" data-aos="fade-left">
       <h3>{{ item.title }}</h3>
       <span>{{ item.content }}</span>
     </div>
