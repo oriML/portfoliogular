@@ -4,14 +4,16 @@ import { ContactMeContainerComponent } from './contact-me-container.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import { ContactDetailsComponent } from './components/contact-details/contact-details.component'
 
 
 
 @NgModule({
   declarations: [
     ContactMeContainerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    ContactDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouteTitleService } from 'src/app/services/route-title.service';
+import { interactionPageMessages } from 'src/app/utils/constants';
 
 @Component({
   selector: 'app-contact-me',
@@ -10,5 +11,13 @@ export class ContactMeContainerComponent {
   routerTitleService: RouteTitleService = inject(RouteTitleService);
   constructor() {
     this.routerTitleService.title = 'Contact me';
+  }
+
+  get interactionPageMessages() {
+    return interactionPageMessages;
+  }
+
+  get pageMessage() {
+    return interactionPageMessages['contact-me'].main;
   }
 }

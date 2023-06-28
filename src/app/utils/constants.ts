@@ -101,3 +101,9 @@ export const techList: ITechListModel[] = [
   { name: "postman", strength: 80 },
   { name: "figma", strength: 85 },
 ];
+
+export const interactionPageMessages = {
+  ['contact-me']:{
+    main: 'Thank you for exploring our portfolio website.\nI really appreciate your interest in our work and would be delighted to connect with you personally.\nWhether you have questions about our projects, want to discuss potential collaborations, or simply wish to share your feedback, I\'m here to hear you!'
+  }
+}
