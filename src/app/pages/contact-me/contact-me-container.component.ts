@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { RouteTitleService } from 'src/app/services/route-title.service';
 import { interactionPageMessages } from 'src/app/utils/constants';
+import { IContactFormModel } from '../models';
 
 @Component({
   selector: 'app-contact-me',
@@ -9,6 +11,8 @@ import { interactionPageMessages } from 'src/app/utils/constants';
 })
 export class ContactMeContainerComponent {
   routerTitleService: RouteTitleService = inject(RouteTitleService);
+  apiService: ApiService = inject(ApiService);
+
   constructor() {
     this.routerTitleService.title = 'Contact me';
   }
@@ -20,4 +24,13 @@ export class ContactMeContainerComponent {
   get pageMessage() {
     return interactionPageMessages['contact-me'].main;
   }
+
+  get isSubmitted$() {
+  return this.apiService.isSubmitted;
+  }
+
+  submit(form: IContactFormModel) {
+    this.apiService.sendForm(form);
+  }
+
 }

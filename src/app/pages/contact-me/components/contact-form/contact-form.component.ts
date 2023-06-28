@@ -1,7 +1,8 @@
-import { Component, OnInit, inject, OnDestroy } from '@angular/core';
+import { Component, OnInit, inject, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
+import { IContactFormModel } from 'src/app/pages/models';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,17 +11,20 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 })
 export class ContactFormComponent implements OnInit, OnDestroy {
   private formBuilder: FormBuilder = inject(FormBuilder);
+  private destroy$ = new Subject<void>();
 
   contactForm!: FormGroup;
   activeEffect!: string;
-  isSubmitting = false;
+  loading = false;
   isSubmitted = false;
 
-  private destroy$ = new Subject<void>();
+  @Output() submit = new EventEmitter<IContactFormModel>;
+  @Input() isSubmitted$!: Observable<boolean>;
 
   constructor() { }
 
   ngOnInit() {
+
     this.contactForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.min(2), Validators.max(100), Validators.pattern(/^[a-zA-Z]+$/)]],
       lastName: ['', [Validators.required, Validators.min(2), Validators.max(100), Validators.pattern(/^[a-zA-Z]+$/)]],
@@ -28,7 +32,26 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       mobile: ['', [Validators.required, Validators.pattern(/^((\\+91-?)|0)?[0-9]{10}$/)]]
     });
 
+
+    this.isSubmitted$
+      .pipe(
+        takeUntil(this.destroy$),
+        tap(() => this.loading = false)
+      ).subscribe(
+        {
+          next: success => {
+            if (success) {
+              this.contactForm.reset();
+              this.isSubmitted = true;
+              setTimeout(() => this.isSubmitted = false, 4000);
+            }
+          },
+          error: err => console.error(err),
+          
+        })
+
     const inputElements = document.querySelectorAll('input');
+
     this.createTypingObservable(inputElements).pipe(
       takeUntil(this.destroy$)
     ).subscribe((field: string) => {
@@ -62,13 +85,10 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.isSubmitting = true;
-    setTimeout(() => {
-      this.contactForm.reset();
-      this.isSubmitting = false;
-      this.isSubmitted = true;
-    }, 2000);
-    setTimeout(() => this.isSubmitted = false , 4000);
+    this.loading = true;
+
+    this.submit.emit(this.contactForm.value);
+
   }
 
   ngOnDestroy() {

@@ -1,7 +1,7 @@
 <p-card class="card-wrapper">
     <div class="cmp-wrapper">
         <app-contact-details [iMessage]="pageMessage"></app-contact-details>
-        <app-contact-form></app-contact-form>
+        <app-contact-form (submit)="submit($event)" [isSubmitted$]="isSubmitted$"></app-contact-form>
     </div>
 </p-card>
 

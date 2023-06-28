@@ -29,3 +29,10 @@ export interface ITechListModel {
     name: string;
     strength: number;
 }
+
+export interface IContactFormModel {
+    firstName: string;
+    lastName: string;
+    email: string;
+    mobile: string;
+}

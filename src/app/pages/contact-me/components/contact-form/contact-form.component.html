@@ -1,5 +1,4 @@
 <div class="contact-form" data-aos="fade-up-right">
-    <h2>Contact Me!</h2>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="grouped" data-aos="fade-right" data-aos-delay="200">
             <div class="form-group">
@@ -46,12 +45,12 @@
 
         </div>
 
-        <button *ngIf="!isSubmitting" type="submit" data-aos="fade-up" data-aos-delay="600"
-            [disabled]="contactForm.invalid || isSubmitting">
+        <button *ngIf="!loading" type="submit" data-aos="fade-up" data-aos-delay="600"
+            [disabled]="contactForm.invalid || loading">
             <span>Submit</span>
         </button>
 
-        <div class="text-center" *ngIf="isSubmitting" data-aos="zoom-in">
+        <div class="text-center" *ngIf="loading" data-aos="zoom-in">
             <p-progressSpinner styleClass="w-[1px] h-[1px]" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
         </div>
 
