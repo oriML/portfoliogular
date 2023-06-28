@@ -80,3 +80,23 @@ export const educationList: IEducationModel[] = [
     color: '#ffffff'
   }
 ];
+
+export const techList = [
+  "javascript",
+  "react",
+  "html5",
+  "css3",
+  "node-js",
+  "redux",
+  "tailwind-css",
+  "angular",
+  "typescript",
+  "csharp",
+  "bootstrap",
+  "sql",
+  "postgresql",
+  "firebase",
+  "git",
+  "postman",
+  "figma",
+];

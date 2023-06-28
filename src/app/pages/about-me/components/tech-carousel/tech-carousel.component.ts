@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tech-carousel',
@@ -8,28 +8,15 @@ import { Component } from '@angular/core';
 })
 export class TechCarouselComponent {
 
-  technologies = [
-    "javascript",
-    "react",
-    "html5",
-    "css3",
-    "node-js",
-    "redux",
-    "tailwind-css",
-    "angular",
-    "typescript",
-    "csharp",
-    "bootstrap",
-    "sql",
-    "postgresql",
-    "firebase",
-    "git",
-    "postman",
-    "figma",
-  ];
+  private _techList: string[] = [];
 
-  techArray = [
-    { category: "Frontend Technologies", technologies: this.technologies }
-  ];
+  @Input() set techList(data: string[]) {
+    this._techList = data;
+  }
+
+  get techList(){
+    return this._techList;
+  }
+
 
 }
