@@ -2,7 +2,7 @@
     [numVisible]="5" [numScroll]="1" [autoplayInterval]="2000">
     <ng-template let-tech pTemplate="item">
         <div class="tech-logo">
-            <img [src]="'assets/img/logos/' + tech +'.svg'" [alt]="tech" />
+            <img [src]="'assets/img/logos/' + tech.name +'.svg'" [alt]="tech.name" />
         </div>
     </ng-template>
 </p-carousel>

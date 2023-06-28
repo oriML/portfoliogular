@@ -1,4 +1,4 @@
-import { IEducationModel, ITimeLineModel } from "../pages/models";
+import { IEducationModel, ITechListModel, ITimeLineModel } from "../pages/models";
 
 export const experienceList: ITimeLineModel[] = [
     {
@@ -81,22 +81,23 @@ export const educationList: IEducationModel[] = [
   }
 ];
 
-export const techList = [
-  "javascript",
-  "react",
-  "html5",
-  "css3",
-  "node-js",
-  "redux",
-  "tailwind-css",
-  "angular",
-  "typescript",
-  "csharp",
-  "bootstrap",
-  "sql",
-  "postgresql",
-  "firebase",
-  "git",
-  "postman",
-  "figma",
+export const techList: ITechListModel[] = [
+  { name: "angular", strength: 90 },
+  { name: "react", strength: 90 },
+  { name: "typescript", strength: 90 },
+  { name: "csharp", strength: 88 },
+  { name: "javascript", strength: 90 },
+  { name: "node-js", strength: 85 },
+  { name: "firebase", strength: 85 },
+  { name: "git", strength: 87 },
+  { name: "sql", strength: 80 },
+  { name: "mongodb", strength: 80 },
+  { name: "redux", strength: 85 },
+  { name: "html5", strength: 95 },
+  { name: "css3", strength: 85 },
+  { name: "tailwind-css", strength: 85 },
+  { name: "bootstrap", strength: 84 },
+  { name: "postgresql", strength: 70 },
+  { name: "postman", strength: 80 },
+  { name: "figma", strength: 85 },
 ];

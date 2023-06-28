@@ -24,3 +24,8 @@ export interface IEducationModel {
     },
     color: string;
 }
+
+export interface ITechListModel {
+    name: string;
+    strength: number;
+}

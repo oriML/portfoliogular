@@ -1,0 +1,10 @@
+<section data-aos="fade-right" data-aos-duration="2000">
+    <p-card>
+        <div class="tech-wrapper" *ngFor="let tech of techList" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+            <div>
+                <img [src]="'assets/img/logos/' + tech.name +'.svg'" [alt]="tech.name" />
+            </div>
+            <p-progressBar [value]="tech.strength"></p-progressBar>
+        </div>
+    </p-card>
+</section>

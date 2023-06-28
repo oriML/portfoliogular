@@ -1,0 +1,41 @@
+:host {
+    .tech-wrapper {
+        display: flex;
+        width: 33%;
+        justify-content: space-around;
+        height: fit-content;
+        margin: 2% 0;
+        > div {
+            background: white;
+            border-radius: 50%;
+            padding: 5%;
+            img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+
+    p-card::ng-deep {
+        .p-card{
+            margin: 5% 10%;
+            background: transparent;
+            box-shadow:   0 2px 11px -1px #00e1ff, 0 1px 1px 0 #00e1ff, 0 1px 3px 0 #00e1ff; 
+        }
+        .p-card-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        p-progressbar {
+            display: block;
+            height: 100%;
+            width: 50%;
+            margin: auto 0;
+            .p-progressbar-value.p-progressbar-value-animate{
+            background: #00e1ff;
+            }
+        }
+    }
+
+}
