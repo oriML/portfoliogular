@@ -1,0 +1,35 @@
+$soft-white: #f9f9f9;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$link-active-color: #00e1ff;
+$link-active-border-height: 4px;
+$link-hover-transition-duration: 1.5s;
+$link-active-transition-duration: 0.5s;
+$link-inactive-transition-duration: 1.2s;
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    width: fit-content;
+    color: $link-active-color;
+    margin: 5% auto;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: color $link-inactive-transition-duration, background-color $link-hover-transition-duration;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: $link-active-border-height;
+        background-color: $link-active-color;
+        transform: scaleX(0);
+        transition: transform $link-active-transition-duration;
+        width: 100%;
+        transform: scaleX(1);
+    }
+}
