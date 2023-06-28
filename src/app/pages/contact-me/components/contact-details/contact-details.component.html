@@ -1,1 +1,11 @@
-<p>{{iMessage}}</p>
+<div class="details-card">
+  <div class="connection-details" *ngFor="let item of details">
+    <div class="icon-wrapper">
+      <i [ngClass]="'bx bx-md ' + item.icon" ></i>
+    </div>
+    <div class="details">
+      <h3>{{ item.title }}</h3>
+      <span>{{ item.content }}</span>
+    </div>
+  </div>
+</div>

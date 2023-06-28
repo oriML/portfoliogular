@@ -1,87 +1,117 @@
 $main-color: #00e1ff;
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 4rem;
-    color: $main-color;
-    h2 {
-        text-align: center;
-    }
+:host {
+    width: 50%;
 
-    form {
+    .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
+        align-items: center;
+        color: $main-color;
 
-        .form-group {
-            position: relative;
+        h2 {
+            text-align: center;
+        }
 
-            label {
-                font-weight: bold;
-                margin-bottom: 0.5rem;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            font-size: 1.2rem;
+
+            .form-group {
+                position: relative;
+
+                label {
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    transition: border-color 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $main-color;
+                    }
+                }
+
+                .error-message {
+                    color: red;
+                    font-weight: bold;
+                    position: absolute;
+                    padding-left: 2%;
+                    font-size: 1rem;
+                    top: 4%;
+                }
+
+                .effect {
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $main-color;
+                    transition: width 0.3s ease;
+
+                    &.active {
+                        width: 100%;
+                    }
+
+                    &.error {
+                        background-color: red;
+
+                    }
+                }
             }
 
-            input[type="text"],
-            input[type="email"],
-            textarea {
+            .grouped {
+                display: flex;
+                justify-content: space-between;
+                gap: 2%;
+
+                >div {
+                    width: 50%;
+                }
+            }
+
+
+            button[type="submit"] {
                 width: 100%;
                 padding: 0.5rem;
-                border: 1px solid #ccc;
+                border: none;
+                background-color: #474747;
+                color: $main-color ;
+                font-weight: bold;
                 border-radius: 4px;
-                transition: border-color 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
 
-                &:focus {
-                    outline: none;
-                    border-color: $main-color;
+                &:hover {
+                    background-color: $main-color ;
+                    color: #474747;
                 }
-            }
 
-            .effect {
-                position: absolute;
-                bottom: -2px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: $main-color;
-                transition: width 0.3s ease;
-
-                &.active {
-                    width: 100%;
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
         }
 
-        button[type="submit"] {
-            width: 100%;
-            padding: 0.5rem;
-            border: none;
-            background-color: #474747;
-            color: $main-color ;
+        .success-indicator {
+            margin-top: 1rem;
+            text-align: center;
             font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            &:hover {
-                background-color: $main-color ;
-                color: #474747;
-            }
-            span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+            color: $main-color;
         }
-    }
-
-    .success-indicator {
-        margin-top: 1rem;
-        text-align: center;
-        font-weight: bold;
-        color: $main-color;
     }
 }
 

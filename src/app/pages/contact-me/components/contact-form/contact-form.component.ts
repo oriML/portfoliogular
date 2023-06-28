@@ -22,16 +22,17 @@ export class ContactFormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.min(2), Validators.max(100), Validators.pattern(/^[a-zA-Z]+$/)]],
+      lastName: ['', [Validators.required, Validators.min(2), Validators.max(100), Validators.pattern(/^[a-zA-Z]+$/)]],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      mobile: ['', [Validators.required, Validators.pattern(/^((\\+91-?)|0)?[0-9]{10}$/)]]
     });
 
-    const inputElements = document.querySelectorAll('input, textarea');
+    const inputElements = document.querySelectorAll('input');
     this.createTypingObservable(inputElements).pipe(
       takeUntil(this.destroy$)
     ).subscribe((field: string) => {
-      this.applyEffect(field);
+      this.activeEffect = field;
     });
   }
 
@@ -52,13 +53,8 @@ export class ContactFormComponent implements OnInit, OnDestroy {
         });
       };
     }).pipe(
-      debounceTime(300),
       distinctUntilChanged()
     );
-  }
-
-  applyEffect(field: string) {
-    this.activeEffect = field;
   }
 
   onSubmit() {
@@ -72,6 +68,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       this.isSubmitting = false;
       this.isSubmitted = true;
     }, 2000);
+    setTimeout(() => this.isSubmitted = false , 4000);
   }
 
   ngOnDestroy() {

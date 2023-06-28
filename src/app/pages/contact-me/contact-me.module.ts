@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NgOptimizedImage } from '@angular/common';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component'
+import { CardModule } from 'primeng/card';
 
 
 
@@ -20,7 +21,8 @@ import { ContactDetailsComponent } from './components/contact-details/contact-de
     FormsModule,
     ReactiveFormsModule,
     ProgressSpinnerModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    CardModule
   ]
 })
 export class ContactMeModule { }
