@@ -1,3 +1,5 @@
+$main-color: #00e1ff;
+
 :host{
   width: 50%;
 .details-card {
@@ -5,12 +7,12 @@
   flex-direction: column;
   gap: 60px;
   border: 0;
-  padding-left: 15%;
+  padding-left: 43%;
   position: relative;
 
   img{
     position: absolute;
-    right: 0;
+    right: 57%;
     top: -69%;
   }
 
@@ -28,7 +30,7 @@
     .icon-wrapper {
       background-color: #00e1ff2a;
       border-radius: 50%;
-      color: #00e1ff;
+      color: $main-color;
       padding: 2%;
       text-align: center;
     }
@@ -38,4 +40,10 @@
     }
   }
 }
+}
+
+::ng-deep {
+  .p-card.p-component{
+      box-shadow:   0 2px 11px -1px $main-color, 0 1px 1px 0 $main-color, 0 1px 3px 0 $main-color; 
+  }
 }
