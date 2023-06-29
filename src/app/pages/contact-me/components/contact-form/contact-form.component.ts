@@ -42,6 +42,7 @@ export class ContactFormComponent implements OnInit, OnDestroy {
           next: success => {
             if (success) {
               this.contactForm.reset();
+              this.activeEffect = '';
               this.isSubmitted = true;
               setTimeout(() => this.isSubmitted = false, 4000);
             }

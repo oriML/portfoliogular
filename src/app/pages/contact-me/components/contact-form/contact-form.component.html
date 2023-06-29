@@ -5,7 +5,7 @@
                 <label for="firstName">First name</label>
                 <span *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
                     class="error-message">Please enter a valid first name.</span>
-                <input id="firstName" type="text" formControlName="firstName"  />
+                <input id="firstName" type="text" formControlName="firstName" />
                 <span class="effect"
                     [ngClass]="{ active: activeEffect === 'firstName', error: contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched }">
                 </span>
@@ -15,7 +15,7 @@
                 <label for="lastName">Last name</label>
                 <span *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched"
                     class="error-message">Please enter a valid last name.</span>
-                <input id="lastName" type="text" formControlName="lastName"  />
+                <input id="lastName" type="text" formControlName="lastName" />
                 <span class="effect"
                     [ngClass]="{ active: activeEffect === 'lastName', error: contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched }">
                 </span>
@@ -28,7 +28,7 @@
             <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
                 class="error-message">Please enter a valid email address.
             </span>
-            <input id="email" type="email" formControlName="email"  />
+            <input id="email" type="email" formControlName="email" />
             <span class="effect"
                 [ngClass]="{ active: activeEffect === 'email', error: contactForm.get('email')?.invalid && contactForm.get('email')?.touched }">
             </span>
@@ -38,20 +38,23 @@
             <label for="mobile">Mobile</label>
             <span *ngIf="contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched"
                 class="error-message">Please enter a valid mobile number.</span>
-            <input id="mobile" type="tel" formControlName="mobile"  />
+            <input id="mobile" type="tel" formControlName="mobile" />
             <span class="effect"
                 [ngClass]="{ active: activeEffect === 'mobile', error: contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched }">
             </span>
 
         </div>
 
-        <button *ngIf="!loading" type="submit" data-aos="fade-up" data-aos-delay="600"
-            [disabled]="contactForm.invalid || loading">
-            <span>Submit</span>
-        </button>
+        <div class="form-submit">
 
-        <div class="text-center" *ngIf="loading" data-aos="zoom-in">
-            <p-progressSpinner styleClass="w-[1px] h-[1px]" strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+            <button *ngIf="!loading" type="submit" data-aos="fade-up" data-aos-delay="600"
+                [disabled]="contactForm.invalid || loading">
+                <span>Submit</span>
+            </button>
+
+            <div class="text-center" *ngIf="loading" data-aos="zoom-in">
+                <p-progressSpinner strokeWidth="4" animationDuration=".5s"></p-progressSpinner>
+            </div>
         </div>
 
         <div class="success-indicator" *ngIf="isSubmitted">Form submitted successfully!</div>
