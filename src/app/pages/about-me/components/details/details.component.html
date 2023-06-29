@@ -1,17 +1,15 @@
 <div class="details" data-aos="zoom-in-right" data-aos-duration="1300">
-    <h2>Hi! 👋</h2>
+    <h2>{{ details.title }}</h2>
     <p>
-        My name is <u>Ori Menachem Levi</u>.
+        {{ details.subTitle }} <u>{{ details.name }}</u>.
     </p>
     <p>
-        I am a Full Stack Developer with experience in ASP.Net, C#, SQL, Angular, React, and more. Throughout my career,
-        I have successfully developed and maintained large-scale systems, collaborated with teams, and demonstrated
-        expertise in various technologies and tools.
+        {{ details.content }}
     </p>
 </div>
 
 <div class="scroll-msg" data-aos="zoom-in-right" data-aos-duration="1300">
-    <p> scroll down to see my stack! </p>
+    <p>{{ details.scrolltent }}</p>
     <i class="bx bx-lg bx-down-arrow-alt"></i>
 </div>
 
@@ -20,8 +18,4 @@
         <img src="assets/img/main-img-border.png" alt="main" />
         <span class="circle-border"></span>
     </div>
-</div>
-
-<div class="shape-container">
-
 </div>

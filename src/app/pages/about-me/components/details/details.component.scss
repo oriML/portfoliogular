@@ -11,7 +11,8 @@ $shadow-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 5%;
     padding-left: 10%;
     font-weight: bold;
-
+    margin-bottom: 10%;
+    white-space: break-spaces;
     .details {
         background-color: $background-color;
         border-radius: $border-radius;
@@ -21,7 +22,9 @@ $shadow-color: rgba(0, 0, 0, 0.2);
         width: 48%;
         min-width: 420px;
         z-index: 10;
-
+        position: relative;
+        top: -95px;
+    
         &:hover {
             transition: transform 0.3s ease-in-out;
             transform: translateX(10px) translateY(-10px);
@@ -72,7 +75,6 @@ $shadow-color: rgba(0, 0, 0, 0.2);
     .scroll-msg {
         position: absolute;
         right: 8%;
-        top: 27%;
 
         background-color: $background-color;
         border-radius: $border-radius;
