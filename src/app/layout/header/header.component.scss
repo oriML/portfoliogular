@@ -9,13 +9,21 @@ $link-inactive-transition-duration: 1.2s;
 .navbar {
     background-color: transparent;
     // box-shadow: 0 2px 4px $shadow-color;
+    position: relative;
 
     &-collapse {
         width: 70%;
     }
 
     &-brand {
-        width: 15%;
+        position: absolute;
+        top: 24%;
+        left: 3%;
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
     }
 
     &-nav {

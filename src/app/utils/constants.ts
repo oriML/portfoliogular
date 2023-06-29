@@ -107,3 +107,10 @@ export const interactionPageMessages = {
     main: 'Thank you for exploring our portfolio website.\nI really appreciate your interest in our work and would be delighted to connect with you personally.\nWhether you have questions about our projects, want to discuss potential collaborations, or simply wish to share your feedback, I\'m here to hear you!'
   }
 }
+
+export const contactLinks = {
+  in: 'https://www.linkedin.com/in/ori-m-levi/',
+  github: 'https://github.com/oriML',
+  mail: 'mailto:orimenachemlevi@gmail.com',
+  whatsapp: 'https://wa.me/+972506436143'
+}
