@@ -7,8 +7,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { SkillsTableComponent } from './components/skills-table/skills-table.component';
 import { CardModule } from 'primeng/card';
-import { CountUpModule } from 'ngx-countup';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +20,6 @@ import { CountUpModule } from 'ngx-countup';
     CarouselModule,
     ProgressBarModule,
     CardModule,
-    CountUpModule
   ]
 })
 export class AboutMeModule { }
