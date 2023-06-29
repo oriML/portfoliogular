@@ -8,7 +8,7 @@ export const experienceList: ITimeLineModel[] = [
         stack: "Full Stack",
         role: "Full Stack Developer",
         logo: {
-          src: '/assets/img/emalogic-logo.png',
+          src: 'assets/img/emalogic-logo.png',
           alt: 'emalogic-logo'
         },
         color: '#ffffff',
@@ -21,7 +21,7 @@ export const experienceList: ITimeLineModel[] = [
         stack: "React, GraphQL, Node.js",
         role: "Full Stack Developer",
         logo: {
-          src: '/assets/img/gocode-logo.png',
+          src: 'assets/img/gocode-logo.png',
           alt: 'gocode-logo'
         },
         color: '#ffffff',
@@ -50,7 +50,7 @@ export const educationList: IEducationModel[] = [
     date: "Nov 2020 - Nov 2021",
     stack: "JavaScript, React.js, Redux.js, MongoDB, ES6",
     logo: {
-      src: "/assets/img/webs-logo.jpg",
+      src: "assets/img/webs-logo.jpg",
       alt: "webs-logo"
     },
     color: '#ffffff'
@@ -62,7 +62,7 @@ export const educationList: IEducationModel[] = [
     date: "Aug 2019 - Aug 2020",
     stack: "C++, Data Structures, Object-Oriented Programming (OOP)",
     logo: {
-      src: "/assets/img/lev-logo.png",
+      src: "assets/img/lev-logo.png",
       alt: "lev-logo"
     },
     color: '#ffffff'
@@ -74,7 +74,7 @@ export const educationList: IEducationModel[] = [
     date: "2012 - 2013",
     stack: "Java, Object-Oriented Programming (OOP)",
     logo: {
-      src: "/assets/img/highs-logo.png",
+      src: "assets/img/highs-logo.png",
       alt: "highs-logo"
     },
     color: '#ffffff'
