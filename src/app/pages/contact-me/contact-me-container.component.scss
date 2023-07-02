@@ -12,15 +12,18 @@
             >.p-card.p-component {
                 margin: 0 2%;
             }
-        }
+            position: relative;
+            .img-wrapper {
+                .card-img{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 110%;
+                    width: 20%;
+                }
+            }
     }
 
-    .img-wrapper {
-        width: 50%;
-        height: 50%;
-        img{
-            height: 100%;
-            width: 100%;
-        }
+
     }
 }
