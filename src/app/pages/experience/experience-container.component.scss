@@ -1,9 +1,11 @@
-:host {
-    position: relative;
+.experience-wrapper {
+    ::ng-deep.p-timeline-event-opposite{
+        position: relative;
 
-    img {
+    }
+    .experience-img {
         position: absolute;
-        top: -14%;
         left: 8%;
+        top: 15%;
     }
 }

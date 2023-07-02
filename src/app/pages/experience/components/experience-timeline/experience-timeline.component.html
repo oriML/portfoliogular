@@ -5,6 +5,7 @@
         </span>
     </ng-template>
     <ng-template pTemplate="content" let-timeline>
+
         <div *ngIf="timeline.dir === 'ltr'" data-aos="flip-right" data-aos-duration="700">
             <p-card [header]="timeline.company" [subheader]="timeline.date + ' ' + timeline.role">
                 <img *ngIf="timeline.logo?.src" [src]="timeline.logo.src" [alt]="timeline.logo.alt" width="200" class="shadow-2 mb-4" />
