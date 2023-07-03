@@ -30,6 +30,9 @@ p {
     .p-card.p-component{
         box-shadow:   0 2px 11px -1px $main-color, 0 1px 1px 0 $main-color, 0 1px 3px 0 $main-color; 
     }
+    .p-timeline{
+        position: relative;
+    }
 }
 
 @media screen and (max-width: 960px) {
