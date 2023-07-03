@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     LayoutModule,
-    PagesModule
   ],
   bootstrap: [AppComponent]
 })

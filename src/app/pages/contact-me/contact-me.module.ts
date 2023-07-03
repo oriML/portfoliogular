@@ -7,6 +7,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NgOptimizedImage } from '@angular/common';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component'
 import { CardModule } from 'primeng/card';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,6 +18,11 @@ import { CardModule } from 'primeng/card';
     ContactDetailsComponent
   ],
   imports: [
+    RouterModule.forChild([
+      {
+        path: '', component: ContactMeContainerComponent
+      }
+    ]),
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

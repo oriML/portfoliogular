@@ -1,27 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutMeComponent } from 'src/app/pages/about-me/about-me-container.component';
-import { ContactMeContainerComponent } from 'src/app/pages/contact-me/contact-me-container.component';
-import { ExperienceContainerComponent } from 'src/app/pages/experience/experience-container.component';
-import { FormalEducationContainerComponent } from 'src/app/pages/formal-education/formal-education-container.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'about-me', pathMatch: 'full'},
   {
     path: 'about-me',
-    component: AboutMeComponent,
+    loadChildren: () => import('../pages/about-me/about-me.module').then(m => m.AboutMeModule),
   },
   {
     path: 'formal-education',
-    component: FormalEducationContainerComponent
+    loadChildren: () => import('../pages/formal-education/formal-education.module').then(m => m.FormalEducationModule),
   },
   {
     path: 'experience',
-    component: ExperienceContainerComponent
+    loadChildren: () => import('../pages/experience/experience.module').then(m => m.ExperienceModule),
   },
   {
     path: 'contact-me',
-    component: ContactMeContainerComponent
+    loadChildren: () => import('../pages/contact-me/contact-me.module').then(m => m.ContactMeModule),
   },
   {
     path: '**',
