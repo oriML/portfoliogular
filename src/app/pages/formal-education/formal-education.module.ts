@@ -4,7 +4,6 @@ import { FormalEducationListComponent } from './formal-education-list/formal-edu
 import { FormalEducationContainerComponent } from './formal-education-container.component';
 import {TimelineModule} from 'primeng/timeline';
 import {CardModule} from 'primeng/card';
-import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,11 +12,6 @@ import { RouterModule } from '@angular/router';
     FormalEducationListComponent
   ],
   imports: [
-    RouterModule.forChild([
-      {
-        path: 'formal-education', component: FormalEducationContainerComponent
-      }
-    ]),
     CommonModule,
     TimelineModule,
     CardModule

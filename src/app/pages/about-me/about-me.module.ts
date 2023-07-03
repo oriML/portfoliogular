@@ -17,14 +17,6 @@ import { CardModule } from 'primeng/card';
     SkillsTableComponent
   ],
   imports: [
-    RouterModule.forChild([
-      {
-        path: '', component: AboutMeComponent
-      },
-      {
-        path: 'about-me', component: AboutMeComponent
-      }
-    ]),
     CommonModule,
     CarouselModule,
     ProgressBarModule,

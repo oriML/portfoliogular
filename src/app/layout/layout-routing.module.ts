@@ -7,25 +7,26 @@ import { FormalEducationContainerComponent } from 'src/app/pages/formal-educatio
 
 const routes: Routes = [
   {path: '', redirectTo: 'about-me', pathMatch: 'full'},
-
   {
-    path: '',
-    loadChildren: () => import('../pages/about-me/about-me.module').then(m => m.AboutMeModule),
+    path: 'about-me',
+    component: AboutMeComponent,
   },
   {
-    path: '',
-    loadChildren: () => import('../pages/formal-education/formal-education.module').then(m => m.FormalEducationModule),
+    path: 'formal-education',
+    component: FormalEducationContainerComponent
   },
   {
-    path: '',
-    loadChildren: () => import('../pages/experience/experience.module').then(m => m.ExperienceModule),
-
+    path: 'experience',
+    component: ExperienceContainerComponent
   },
   {
-    path: '',
-    loadChildren: () => import('../pages/contact-me/contact-me.module').then(m => m.ContactMeModule),
+    path: 'contact-me',
+    component: ContactMeContainerComponent
   },
-  {path: '**', redirectTo: 'about-me'},
+  {
+    path: '**',
+    redirectTo: 'about-me'
+  }
 ];
 
 @NgModule({
