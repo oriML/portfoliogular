@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AboutMeComponent } from './about-me-container.component';
 import { DetailsComponent } from './components/details/details.component';
@@ -16,10 +17,21 @@ import { CardModule } from 'primeng/card';
     SkillsTableComponent
   ],
   imports: [
+    RouterModule.forChild([
+      {
+        path: '', component: AboutMeComponent
+      },
+      {
+        path: 'about-me', component: AboutMeComponent
+      }
+    ]),
     CommonModule,
     CarouselModule,
     ProgressBarModule,
     CardModule,
+  ],
+  exports:[
+    AboutMeComponent
   ]
 })
 export class AboutMeModule { }
